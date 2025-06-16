@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Hair Studio</title>
+  <title>Tzabrina's Hair Studio</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+  <!-- Fixed Book Now Button -->
+  <a href="#booking" class="fixed-cta">Book Now</a>
+
   <div class="container">
     <header>
-      <h1>Your Hair Studio</h1>
+      <h1>Tzabrina's Hair Studio</h1>
       <nav>
         <ul>
           <li><a href="#about">About</a></li>
@@ -22,14 +27,23 @@
       </nav>
     </header>
 
+    <!-- Hero Section with Carousel -->
     <section id="hero">
-      <h2>Look Your Best, Feel Your Best</h2>
-      <p>Professional, personalized haircuts for all styles and occasions.</p>
+      <div class="hero-carousel">
+        <img src="images/hero1.jpg" alt="Hero image 1">
+        <img src="images/hero2.jpg" alt="Hero image 2">
+        <img src="images/hero3.jpg" alt="Hero image 3">
+      </div>
+      <div class="hero-overlay">
+        <h2>Look Your Best, Feel Your Best</h2>
+        <p>Professional, personalized haircuts for all styles and occasions.</p>
+      </div>
     </section>
 
     <section id="about">
-      <h2>About Me</h2>
-      <p>Welcome! I'm [Your Name], a professional hairstylist with over [X years] of experience. I specialize in creating looks that make you feel confident and beautiful.</p>
+      <h2>About Tzabrina</h2>
+      <p>Hi! I'm Tzabrina, a passionate hairstylist with over 10 years of experience. I believe every haircut should be a confidence boost. My studio offers a relaxing environment where artistry meets personal care.</p>
+      <img src="images/tzabrina.jpg" alt="Photo of Tzabrina" class="profile-img">
     </section>
 
     <section id="services">
@@ -46,7 +60,11 @@
     <section id="gallery">
       <h2>Gallery</h2>
       <div class="carousel">
-        <!-- Add image carousel items here -->
+        <!-- Replace with 50 high-quality images -->
+        <img src="images/style1.jpg" alt="Haircut 1">
+        <img src="images/style2.jpg" alt="Haircut 2">
+        <img src="images/style3.jpg" alt="Haircut 3">
+        <!-- ... up to 50 -->
       </div>
     </section>
 
@@ -65,7 +83,7 @@
     </section>
 
     <footer>
-      <p>&copy; 2025 Your Hair Studio. All rights reserved.</p>
+      <p>&copy; 2025 Tzabrina's Hair Studio. All rights reserved.</p>
     </footer>
   </div>
 </body>
