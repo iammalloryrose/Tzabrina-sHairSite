@@ -4,28 +4,47 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Body with gold to light purple vertical gradient */
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #fdfcfa url('images/texture.png') repeat;
+  margin: 0;
   color: #333;
   line-height: 1.6;
+  background: linear-gradient(to bottom, #f9e2b3 0%, #cbb4d4 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
+
+/* Main container - centered with transparent white box */
 .container {
   max-width: 1000px;
-  margin: auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3); /* 30% transparent white */
   border-radius: 20px;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Center all text blocks */
+header, section, footer {
+  text-align: center;
 }
 
 /* Navigation */
 header h1 {
   font-size: 2rem;
-  color: #6e5595;
-  text-align: center;
+  color: #6e5595; /* Soft purple */
   margin-bottom: 0.5rem;
 }
+
 nav ul {
   display: flex;
   justify-content: center;
@@ -33,14 +52,16 @@ nav ul {
   gap: 1.5rem;
   margin-bottom: 2rem;
 }
+
 nav a {
   text-decoration: none;
   color: #6e5595;
   font-weight: 600;
   transition: color 0.3s;
 }
+
 nav a:hover {
-  color: #d6b370;
+  color: #d6b370; /* Soft gold */
 }
 
 /* Hero Section */
@@ -51,35 +72,42 @@ nav a:hover {
   margin-bottom: 3rem;
   border-radius: 16px;
 }
+
 .hero-carousel {
   display: flex;
   width: 300%;
   height: 100%;
   animation: slide 15s infinite;
 }
+
 .hero-carousel img {
   width: 100%;
   object-fit: cover;
   flex-shrink: 0;
 }
+
 .hero-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
+  color: #333;
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white behind text */
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 12px;
+  max-width: 90%;
 }
+
 .hero-overlay h2 {
   font-size: 2.5rem;
-  color: #fdfdfd;
+  color: #6e5595;
   margin-bottom: 0.5rem;
 }
+
 .hero-overlay p {
   font-size: 1.2rem;
+  color: #555;
 }
 
 /* Carousel Keyframes */
@@ -94,17 +122,30 @@ nav a:hover {
 section {
   margin-bottom: 4rem;
 }
+
 section h2 {
   font-size: 2rem;
   color: #6e5595;
   margin-bottom: 1rem;
-  text-align: center;
 }
+
 section p, section ul {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  color: #444;
 }
+
+section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+section ul li {
+  padding: 0.3rem 0;
+}
+
+/* Profile Image */
 .profile-img {
   display: block;
   margin: 2rem auto 0;
@@ -120,12 +161,14 @@ section p, section ul {
   gap: 1rem;
   padding: 1rem;
 }
+
 .carousel img {
   width: 100%;
   border-radius: 10px;
   transition: transform 0.3s;
   object-fit: cover;
 }
+
 .carousel img:hover {
   transform: scale(1.05);
 }
@@ -142,7 +185,7 @@ section p, section ul {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #d6b370;
+  background: #d6b370; /* Soft gold */
   color: #fff;
   padding: 0.8rem 1.4rem;
   border-radius: 50px;
@@ -152,8 +195,9 @@ section p, section ul {
   z-index: 1000;
   transition: background 0.3s;
 }
+
 .fixed-cta:hover {
-  background: #6e5595;
+  background: #6e5595; /* Soft purple */
 }
 
 /* Footer */
