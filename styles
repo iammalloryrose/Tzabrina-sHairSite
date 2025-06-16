@@ -1,108 +1,165 @@
-/* Base styles */
-body {
-  font-family: 'Montserrat', Helvetica, sans-serif;
+/* Reset and Base Styles */
+* {
   margin: 0;
-  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'); /* Subtle abstract texture */
-  background-color: #fdfdfc;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fdfcfa url('images/texture.png') repeat;
   color: #333;
   line-height: 1.6;
 }
-
 .container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  border-radius: 8px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.05);
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 30px 0;
-}
-
+/* Navigation */
 header h1 {
-  margin: 0;
-  font-size: 2.5em;
-  color: #6c4b8e; /* soft purple */
+  font-size: 2rem;
+  color: #6e5595;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
-
 nav ul {
-  list-style: none;
-  padding: 0;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+  list-style: none;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
-
 nav a {
   text-decoration: none;
-  color: #6c4b8e;
+  color: #6e5595;
   font-weight: 600;
+  transition: color 0.3s;
 }
-
 nav a:hover {
-  color: #b39866; /* soft gold */
+  color: #d6b370;
 }
 
-/* Section Styling */
-section {
-  margin-bottom: 50px;
-}
-
-section h2 {
-  color: #b39866;
-  font-size: 1.8em;
-  margin-bottom: 10px;
-}
-
-/* Hero */
+/* Hero Section */
 #hero {
-  text-align: center;
-  background: rgba(179, 152, 102, 0.05);
-  padding: 40px 20px;
-  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  margin-bottom: 3rem;
+  border-radius: 16px;
 }
-
-/* Gallery Carousel (basic styling, JS functionality to be added later) */
-.carousel {
+.hero-carousel {
   display: flex;
-  overflow-x: scroll;
-  gap: 10px;
+  width: 300%;
+  height: 100%;
+  animation: slide 15s infinite;
 }
-
-.carousel img {
-  height: 200px;
-  border-radius: 6px;
+.hero-carousel img {
+  width: 100%;
+  object-fit: cover;
   flex-shrink: 0;
 }
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.hero-overlay h2 {
+  font-size: 2.5rem;
+  color: #fdfdfd;
+  margin-bottom: 0.5rem;
+}
+.hero-overlay p {
+  font-size: 1.2rem;
+}
 
-/* Booking Form/Calendly Embed */
-#booking iframe,
-.calendly-inline-widget {
+/* Carousel Keyframes */
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Sections */
+section {
+  margin-bottom: 4rem;
+}
+section h2 {
+  font-size: 2rem;
+  color: #6e5595;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+section p, section ul {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.profile-img {
+  display: block;
+  margin: 2rem auto 0;
+  max-width: 200px;
+  border-radius: 100px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Gallery */
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+.carousel img {
   width: 100%;
-  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s;
+  object-fit: cover;
+}
+.carousel img:hover {
+  transform: scale(1.05);
+}
+
+/* Booking Section */
+#booking .calendly-inline-widget {
+  margin-top: 2rem;
   border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Fixed CTA */
+.fixed-cta {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #d6b370;
+  color: #fff;
+  padding: 0.8rem 1.4rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+.fixed-cta:hover {
+  background: #6e5595;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
+  padding: 1rem 0;
   color: #999;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-  }
-
-  .carousel img {
-    height: 150px;
-  }
 }
