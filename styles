@@ -1,0 +1,108 @@
+/* Base styles */
+body {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  margin: 0;
+  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'); /* Subtle abstract texture */
+  background-color: #fdfdfc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #6c4b8e; /* soft purple */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #6c4b8e;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #b39866; /* soft gold */
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 50px;
+}
+
+section h2 {
+  color: #b39866;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+/* Hero */
+#hero {
+  text-align: center;
+  background: rgba(179, 152, 102, 0.05);
+  padding: 40px 20px;
+  border-radius: 8px;
+}
+
+/* Gallery Carousel (basic styling, JS functionality to be added later) */
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  gap: 10px;
+}
+
+.carousel img {
+  height: 200px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Booking Form/Calendly Embed */
+#booking iframe,
+.calendly-inline-widget {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #999;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  .carousel img {
+    height: 150px;
+  }
+}
